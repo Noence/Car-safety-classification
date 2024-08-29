@@ -4,6 +4,8 @@ This project uses Bohanec,Marko. (1997). Car Evaluation. UCI Machine Learning Re
 
 The code main.py uses a KNN algorithm with 7 neighbors. However, prior to running the classifying algorithm, categorical variables were encoded using Sklearn's OrdinalEncoder. This simply makes data entries that are text, such as 'high,' 'low,' and 'med' into numbers that can be read by the algorithm. The KNN is able to effectiely classify cars with mean accuracy of 0.92 using the above features.
 
-## Next Steps
+Random forest classifier and Support Vector Classification (SVC) models were also tested, where random forest yielded much higher accuracy than using the KNN.
 
-Next I would like to plot the decision boundary of the algorithm for different features. Currently the code can do so if it is trained on 2 features rather than 6, yet, the algorithm's accuracy greatly suffers when losing 4 features. Additionally, using other classifying algorithms, such as random forest, or SVMs could be an interesting exercise in improving the model's accuracy. Finally, finding feature importance would give us good insight into how the model makes its decision boundaries.
+The pair most relevant in yielding high accuracy were found by iterating over each possible feature pair and testing the model on the same data. I found that the best feature pair were passenger capacity and estimated safety of cars. While an interesting experiment, using this feature pair only yields an accuracy score of 0.79, which means that conclusive observations cannot be made from using only a pair of features.
+
+Finally, the plotting of decision boundaries was implemented on feature pairs. However these provide very limited insight into the distribution of the data, as the data has only 3-4 discrete values it can take. Nevertheless, the code may be reused in the future to display the decision boundaries models using contiuous data.
